@@ -1,0 +1,13 @@
+<div [class]="appContainer">
+  <div class="app-inner-container">
+    <h2>Angular Front End Eng Assessment</h2>
+    <div class="container button-container">
+      <div class="row">
+        <div *ngFor="let button of buttonList; let indexVal = index;" class="col-md-6 button-container">
+          <app-tooltip [button]="button" [index]="indexVal" [currIndex]="currentSelectedIndex"></app-tooltip>
+          <button (click)="buttonClick(indexVal)" class="btn button-theme" type="button">{{button.buttonText}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

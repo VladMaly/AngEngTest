@@ -1,0 +1,57 @@
+@import "../../colors/colors"
+
+.overhead-tooltip
+    padding: 20px
+    color: $colorTooltipText
+    border: 1px solid $colorTooltipBorder
+    background-color: $colorTooltipBackground
+    margin-bottom: 20px
+    border-radius: 5px
+
+%overhead-position-common
+    position: absolute
+    z-index: 100
+
+%overhead-tooltip-common
+    box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1)
+    background: white
+    // margin-top: -100px
+    width: calc(100% - 26px)
+    @extend %overhead-position-common
+
+.overhead-tooltip
+    @extend %overhead-tooltip-common
+
+.overhead-tooltip-above
+    margin-top: -93px
+
+.overhead-tooltip-below
+    margin-top: 50px
+
+%overhead-tooltip-triangle-common
+    content: ""
+    // left: calc(100% - 22px)
+    transform: translateX(-50%)
+    border: 8px solid white
+    @extend %overhead-position-common
+    border-width: 10px
+
+.overhead-tooltip-above:after
+    @extend %overhead-tooltip-triangle-common
+    border-color: white transparent transparent transparent
+    top: calc(100% - 1px)
+
+.overhead-tooltip-above:before
+    @extend %overhead-tooltip-triangle-common
+    border-color: black transparent transparent transparent
+    top: 100%
+
+.overhead-tooltip-below:after
+    @extend %overhead-tooltip-triangle-common
+    border-color: transparent transparent white transparent
+    top: calc(-21px + 1px)
+
+.overhead-tooltip-below:before
+    @extend %overhead-tooltip-triangle-common
+    border-color: transparent transparent black transparent
+    top: -21px

@@ -1,0 +1,4 @@
+<div #toolTip [hidden]="index != currIndex" (click)="clickEvent()"
+ [class]="isPositionBelow == true ? 'overhead-tooltip-below overhead-tooltip' : 'overhead-tooltip-above overhead-tooltip'">
+  <p>{{button.buttonToolTipText ? button.buttonToolTipText : 'This is ' + button.buttonText }}</p>
+</div>
